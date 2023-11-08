@@ -15,6 +15,7 @@ class LoginScreen extends StatefulWidget{
 }
  class LoginScreenState extends State<LoginScreen>{
     
+  @override
   Widget build(context){
       return Container(
         margin: const EdgeInsets.all(20.0),
@@ -38,8 +39,8 @@ class LoginScreen extends StatefulWidget{
    Widget passwordField(){
     return TextFormField(
       keyboardType: TextInputType.visiblePassword,
-      decoration: InputDecoration(labelText: 'Password', hintText: 'Password1234@'),
-      
+      decoration: const InputDecoration(labelText: 'Password', hintText: 'Password1234@'),
+
     );
    }
   // Widget submitButton(){}
