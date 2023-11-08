@@ -21,10 +21,20 @@ class LoginScreen extends StatefulWidget{
         child: Form(
           child: Column(
             children: [
-              
+              emailField(),
+              //passwordField(),
+              //submitButton(),
+
             ],
           ),),
 
       );
     }
+    Widget emailField(){
+    return TextFormField(
+      keyboardType: ,
+      decoration:  const InputDecoration(labelText:'Email', hintText: 'test@test.com'));   
+   }
+   //Widget passwordField(){}
+  // Widget submitButton(){}
   }
