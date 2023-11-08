@@ -40,7 +40,7 @@ class LoginScreen extends StatefulWidget{
     return TextFormField(
       keyboardType: TextInputType.visiblePassword,
       decoration: const InputDecoration(labelText: 'Password', hintText: 'Password1234@'),
-
+      obscureText: true,
     );
    }
   // Widget submitButton(){}
