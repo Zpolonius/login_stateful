@@ -45,6 +45,9 @@ class LoginScreen extends StatefulWidget{
    }
   Widget submitButton(){
     return ElevatedButton(onPressed: () => {}, child: const Text('Submit'), 
+    style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.lightGreen), 
+    elevation: MaterialStatePropertyAll(20.0)),
+     
     );
   }
   }
