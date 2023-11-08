@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget{
-  const LoginScreen({super.key});
+ 
 
   
   
    
-     @override
+     
   createState() {
     
     return LoginScreenState();
@@ -15,8 +15,16 @@ class LoginScreen extends StatefulWidget{
 }
  class LoginScreenState extends State<LoginScreen>{
     
-      @override
-  Widget build(){
+  Widget build(context){
+      return Container(
+        margin: const EdgeInsets.all(20.0),
+        child: Form(
+          child: Column(
+            children: [
+              
+            ],
+          ),),
 
+      );
     }
   }
