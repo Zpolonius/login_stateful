@@ -24,7 +24,7 @@ class LoginScreen extends StatefulWidget{
             children: [
               emailField(),
               passwordField(),
-              //submitButton(),
+              submitButton(),
 
             ],
           ),),
@@ -43,5 +43,8 @@ class LoginScreen extends StatefulWidget{
       obscureText: true,
     );
    }
-  // Widget submitButton(){}
+  Widget submitButton(){
+    return ElevatedButton(onPressed: () => {}, child: const Text('Submit'), 
+    );
+  }
   }
