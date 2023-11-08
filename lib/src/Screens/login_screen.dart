@@ -22,7 +22,7 @@ class LoginScreen extends StatefulWidget{
           child: Column(
             children: [
               emailField(),
-              //passwordField(),
+              passwordField(),
               //submitButton(),
 
             ],
@@ -32,9 +32,15 @@ class LoginScreen extends StatefulWidget{
     }
     Widget emailField(){
     return TextFormField(
-      keyboardType: ,
+      keyboardType: TextInputType.emailAddress,
       decoration:  const InputDecoration(labelText:'Email', hintText: 'test@test.com'));   
    }
-   //Widget passwordField(){}
+   Widget passwordField(){
+    return TextFormField(
+      keyboardType: TextInputType.visiblePassword,
+      decoration: InputDecoration(labelText: 'Password', hintText: 'Password1234@'),
+      
+    );
+   }
   // Widget submitButton(){}
   }
