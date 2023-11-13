@@ -19,6 +19,7 @@ class LoginScreen extends StatefulWidget{
  
 }
  class LoginScreenState extends State<LoginScreen>{
+    final formKey = GlobalKey<FormState>();
     
   @override
   Widget build(context){
@@ -27,6 +28,7 @@ class LoginScreen extends StatefulWidget{
         margin: const EdgeInsets.all(25.0),
          
         child: Form(
+          key: formKey,
           child: Column(
             
             children: [
@@ -43,19 +45,35 @@ class LoginScreen extends StatefulWidget{
     Widget emailField(){
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
-      decoration:  const InputDecoration(labelText:'Email', hintText: 'test@test.com'));   
+      decoration:  const InputDecoration(labelText:'Email', hintText: 'test@test.com'),
+      validator: (value){
+        if (!value!.contains('@')){
+          return 'Please enter a valid email';
+        }else {
+          return null;
+        }
+      },
+      );   
    }
    Widget passwordField(){
     return TextFormField(
       keyboardType: TextInputType.visiblePassword,
       decoration: const InputDecoration(labelText: 'Password', hintText: 'Password1234@'),
       obscureText: true,
+      validator: (value){
+        if (value!.length < 8){
+          return 'Password must contains at least 8 characters';
+        }else
+        {return null;}
+      }
     );
    }
   Widget submitButton(){
     return Container(
       alignment: Alignment.centerRight,
-      child: ElevatedButton(onPressed: () => {}, 
+      child: ElevatedButton(onPressed: () {
+        formKey.currentState?.validate();
+      }, 
       style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.lightGreen), 
       elevation: MaterialStatePropertyAll(20.0)), child: const Text('Submit'),
       
