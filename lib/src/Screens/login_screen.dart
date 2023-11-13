@@ -19,8 +19,10 @@ class LoginScreen extends StatefulWidget{
   Widget build(context){
       return Container(
         margin: const EdgeInsets.all(20.0),
+         
         child: Form(
           child: Column(
+            
             children: [
               emailField(),
               passwordField(),
@@ -44,10 +46,14 @@ class LoginScreen extends StatefulWidget{
     );
    }
   Widget submitButton(){
-    return ElevatedButton(onPressed: () => {}, child: const Text('Submit'), 
-    style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.lightGreen), 
-    elevation: MaterialStatePropertyAll(20.0)),
-     
+    return Container(
+      alignment: Alignment.centerRight,
+      child: ElevatedButton(onPressed: () => {}, 
+      style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.lightGreen), 
+      elevation: MaterialStatePropertyAll(20.0)), child: const Text('Submit'),
+      
+       
+      ),
     );
   }
   }
