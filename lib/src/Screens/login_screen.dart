@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget{
@@ -18,7 +20,8 @@ class LoginScreen extends StatefulWidget{
   @override
   Widget build(context){
       return Container(
-        margin: const EdgeInsets.all(20.0),
+        
+        margin: const EdgeInsets.all(25.0),
          
         child: Form(
           child: Column(
@@ -26,6 +29,7 @@ class LoginScreen extends StatefulWidget{
             children: [
               emailField(),
               passwordField(),
+            Container( margin: const EdgeInsets.all(10),),
               submitButton(),
 
             ],
