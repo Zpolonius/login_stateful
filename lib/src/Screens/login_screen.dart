@@ -20,6 +20,9 @@ class LoginScreen extends StatefulWidget{
 }
  class LoginScreenState extends State<LoginScreen>{
     final formKey = GlobalKey<FormState>();
+
+    String email = '';
+    String password = '';
     
   @override
   Widget build(context){
@@ -52,7 +55,13 @@ class LoginScreen extends StatefulWidget{
         }else {
           return null;
         }
+        
       },
+      onSaved: (value){
+        
+          print(value);
+              },
+
       );   
    }
    Widget passwordField(){
@@ -65,15 +74,21 @@ class LoginScreen extends StatefulWidget{
           return 'Password must contains at least 8 characters';
         }else
         {return null;}
-      }
+      },
+      onSaved: (value){
+        
+          print(value);
+        
+      },
     );
    }
   Widget submitButton(){
     return Container(
       alignment: Alignment.centerRight,
       child: ElevatedButton(onPressed: () {
-        formKey.currentState?.validate();
-      }, 
+        if (formKey.currentState!.validate()){
+        formKey.currentState!.save();
+      } },
       style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.lightGreen), 
       elevation: MaterialStatePropertyAll(20.0)), child: const Text('Submit'),
       
