@@ -58,8 +58,8 @@ class LoginScreen extends StatefulWidget{
         
       },
       onSaved: (value){
-        
-          print(value);
+        email = value!;
+          
               },
 
       );   
@@ -76,8 +76,8 @@ class LoginScreen extends StatefulWidget{
         {return null;}
       },
       onSaved: (value){
-        
-          print(value);
+          password = value!;
+          
         
       },
     );
